@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="ValidationSM.js"></script>
+        <!-- // const validate=()=>
+        // {
+        //     let sm=document.forms['supermarket'].namdet.value
+        //     alert(""+(/^[A-Za-z]+$/).test(sm))
+        //     let sm1=document.forms['supermarket'].mobdet.value
+        //     alertalert((/^[0-9]/).test(sm1))
+        //     let sm2=document.forms['supermarket'].emdet.value
+        //     alert((/^(?=.*[0-9])(?=.+[@.])[A-Za-z0-9@.]/).test(emdet))
+        // } -->
+       
+   <style>
+    p{
+        color: red;
+    }
+   </style>
+</head>
+<body>
+    <form name="supermarket" onsubmit="return Active()" action="#">
+        <div
+           style="
+              background-image: url(https://cdn.corporate.walmart.com/dims4/WMT/56fbca0/2147483647/strip/true/crop/1920x1080+0+0/resize/1600x900!/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F1c%2F7e%2F762affa147d68b2a656fa4d600fc%2Fcorp-site-homepage-banner-1.jpg);
+               height: 1000px;
+               "
+              >
+               <div class="card col-14 row justify-content-center">
+<div  class="row justify-content-center">
+    <img src="../HTML/Images/dmart-vector-logo.png" class="ms-5 col-lg-5" style="height:200px;">
+</div>
+</div>
+<div class="card col-6 container align-self-center">
+<div class="card-body">
+<div class="mt-3">
+    <label class="form-label text-secondary"><b>NAME</b></label>
+    <input type="text" name="Nname" class="form-control col-3">
+    <p id="namdet"></p>
+</div>
+<div class="mt-3">
+    <label class="form-label text-secondary"><b>MOBILE NO</b></label>
+    <input type="tel" name="Mname" class="form-control col-3" placeholder="EG-123456789">
+    <p id="mobdet"></p>
+</div>
+<div class="mt-3">
+    <label class="form-label text-secondary"><b>MAIL ID</b></label>
+    <input type="email" name="Ename" class="form-control col-3" placeholder="EG-abcd123@mail.com">
+    <p  id="emdet"></p>
+</div>
+<div class="mt-3">
+    <label class="form-label text-secondary"><b>GENDER</b></label>
+    <br>
+        <input type="radio" name="Gen" value="Male" class="form-check-input ps-3">Male
+        <br>
+        <input type="radio" name="Gen" value="Female" class="form-check-input">Female
+        <br>
+        <input type="radio" name="Gen" value="Other" class="form-check-input ps-3">Other
+    </div>
+    <div class="mt-3">
+        <label class="form-label text-secondary"><b>D-MART BRANCH</b></label>
+        <select class="form-select">
+            <option hidden selected>Place</option>
+            <option>5-Roads</option>
+            <option>Junction</option>
+            <option>New Bus stand</option>
+            <option>Old Bustand</option>
+        </select>
+    </div>
+    <div class="mt-3">
+        <label class="form-label text-secondary"><b>DATE</b></label>
+        <input type="date" class="form-control col-3" placeholder="Format:dd-mm-yy">
+    </div>
+    <div class="mt-3">
+        <label class="form-label text-secondary"><b>CUSTOMER ID</b></label>
+        <input type="text" name="csid"  class="form-control col-3" placeholder="EG: DSVNND43231VDV">
+        <p id="iddet"></p>
+    </div>
+</div>
+</div>
+    <br>
+    <div class="align-self-center text-center">
+        <button class="btn btn-outline-success text-dark" >Go to Shopping</button>
+    <button class="btn btn-outline-danger text-dark ms-4">Cancel Shopping</button>
+    </div>
+    <br >
+    <div class=" d-flex justify-content-start">
+        <div class="card col-2">
+        <div class="card-body">
+            <img src="../HTML/Images/dmart-vector-logo.png" style="height:100px ;">
+            <marquee behaviour="alternate" direction="left" class="text-danger">💥Available💥</marquee>
+            <h5 class="card-title ms-4 text-success">FRESH CHICKEN</h5>
+            <img src="../HTML/Images/chicken-640x360.jpg" style="height: 100px ;">
+             <div class="text-center">
+                <input  type="radio" name="tick" valu="Whole Chicken"><b>Whole Chicken</b>
+                <p class="fw-bold text-primary"><a>$35 </a></p>
+                <input type="radio" name="tick" value="Half Chicken"><b>Half Chicken</b>
+                <p class="fw-bold text-success"><a>$10</a></p>
+            <div>
+                <label class="text-secondary">Quantity</label>
+                <select>
+                     <option hidden selected></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-outline-success"><a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=21761261031&pf_rd_r=31H7VG6KB27RT6H2M8H1&pf_rd_p=feda6df8-22dc-4e0f-b054-2886a5a70651&pd_rd_r=4ae8f598-019b-43ed-9bdf-893ba8ef5687&pd_rd_w=8NMlj&pd_rd_wg=I1ekc&ref_=pd_gw_unk" target="_blank">BUY</a></button>
+            </div>
+            </div>
+         </div>
+    </div>
+        <div class="card col-lg-2 col-md-5 col-sm-7">
+        <div class="card-body">
+            <img src="../HTML/Images/dmart-vector-logo.png" style="height:100px ;">
+            <marquee behaviour="alternate" direction="left" class="text-danger">💥Available💥</marquee>
+            <h5 class="card-title ms-5 text-success">HOT DOGS</h5>
+            <img src="../HTML/Images/Hot dogs.jpg" style="height: 100px ;" class="ms-4">
+             <div class="text-center">
+                <input  type="radio" name="tick" valu="Beef Flanks"><b>Beef Flanks</b>
+                <p class="fw-bold text-primary"><a>$7 </a></p>
+                <input type="radio" name="tick" value="Corn Flanks"><b>Corn Flanks</b>
+                <p class="fw-bold text-success"><a>$5</a></p>
+            <div>
+                <label class="text-secondary">Quantity</label>
+                <select>
+                     <option hidden selected></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-outline-success"><a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=21761261031&pf_rd_r=31H7VG6KB27RT6H2M8H1&pf_rd_p=feda6df8-22dc-4e0f-b054-2886a5a70651&pd_rd_r=4ae8f598-019b-43ed-9bdf-893ba8ef5687&pd_rd_w=8NMlj&pd_rd_wg=I1ekc&ref_=pd_gw_unk" target="_blank">BUY</a></button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-2 col-md-5 col-sm-7">
+        <div class="card-body">
+            <img src="../HTML/Images/dmart-vector-logo.png" style="height:100px ;">
+            <marquee behaviour="alternate" direction="left" class="text-danger">💥Available💥</marquee>
+            <h5 class="card-title ms-4 text-success">BASMATI RICE</h5>
+            <img src="../HTML/Images/Basmati Rice.jpg" style="height: 100px ;" class="ms-5">
+             <div class="text-center">
+                <input  type="radio" name="tick" valu="25Kg Rice"><b>25KG Rice</b>
+                <p class="fw-bold text-primary"><a>$110</a></p>
+                <input type="radio" name="tick" value="10KG Rice"><b>10KG Rice</b>
+                <p class="fw-bold text-success"><a>$10</a></p>
+            <div>
+                <label class="text-secondary">Quantity</label>
+                <select>
+                     <option hidden selected></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-outline-primary"><a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=21761261031&pf_rd_r=31H7VG6KB27RT6H2M8H1&pf_rd_p=feda6df8-22dc-4e0f-b054-2886a5a70651&pd_rd_r=4ae8f598-019b-43ed-9bdf-893ba8ef5687&pd_rd_w=8NMlj&pd_rd_wg=I1ekc&ref_=pd_gw_unk" target="_blank">BUY</a></button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-2 col-md-5 col-sm-7">
+        <div class="card-body">
+            <img src="../HTML/Images/dmart-vector-logo.png" style="height:100px ;">
+            <marquee behaviour="alternate" direction="left" class="text-danger">💥Not Available💥</marquee>
+            <h5 class="card-title ms-4 text-success">VEGETABLES</h5>
+            <img src="../HTML/Images/Vegetables.jpg" style="height: 100px ;" class="ms-5">
+             <div class="text-center">
+                <input  type="radio" name="tick" valu="1KG Veg"><b>1KG Veg</b>
+                <p class="fw-bold text-primary"><a>$5 </a></p>
+                <input type="radio" name="tick" value="5KG Veg"><b>5KG Veg</b>
+                <p class="fw-bold text-success"><a>$12  </a></p>
+            <div>
+                <label class="text-secondary">Quantity</label>
+                <select>
+                     <option hidden selected></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-outline-success"><a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=21761261031&pf_rd_r=31H7VG6KB27RT6H2M8H1&pf_rd_p=feda6df8-22dc-4e0f-b054-2886a5a70651&pd_rd_r=4ae8f598-019b-43ed-9bdf-893ba8ef5687&pd_rd_w=8NMlj&pd_rd_wg=I1ekc&ref_=pd_gw_unk" target="_blank">BUY</a></button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-2 col-md-5 col-sm-7">
+        <div class="card-body">
+            <img src="../HTML/Images/dmart-vector-logo.png" style="height:100px ;">
+            <marquee behaviour="alternate" direction="left" class="text-danger">💥Available💥</marquee>
+            <h5 class="card-title ms-4 text-success">WHEAT FLOUR</h5>
+            <img src="../HTML/Images/Wheatflour.jpg" style="height: 100px ;" class="ms-5">
+             <div class="text-center">
+                <input  type="radio" name="tick" valu="1KG Flour"><b>1KG Flour</b>
+                <p class="fw-bold text-primary"><a>$5 </a></p>
+                <input type="radio" name="tick" value="10KG Flour"><b>10KG Flour</b>
+                <p class="fw-bold text-success"><a>$15</a></p>
+            <div>
+                <label class="text-secondary">Quantity</label>
+                <select>
+                     <option hidden selected></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-outline-success"><a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=21761261031&pf_rd_r=31H7VG6KB27RT6H2M8H1&pf_rd_p=feda6df8-22dc-4e0f-b054-2886a5a70651&pd_rd_r=4ae8f598-019b-43ed-9bdf-893ba8ef5687&pd_rd_w=8NMlj&pd_rd_wg=I1ekc&ref_=pd_gw_unk" target="_blank">BUY</a></button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="card col-lg-2 col-md-5 col-sm-7">
+        <div class="card-body">
+            <img src="../HTML/Images/dmart-vector-logo.png" style="height:100px ;">
+            <marquee behaviour="alternate" direction="left" class="text-danger">💥Available💥</marquee>
+            <h5 class="card-title ms-4 text-success">FRESH MEATS</h5>
+            <img src="../HTML/Images/fresh meats.jpg" style="height: 100px ;" class="ms-4">
+             <div class="text-center">
+                <input  type="radio" name="tick" valu="1KG Meat"><b>1KG Meat</b>
+                <p class="fw-bold text-primary"><a>$10 </a></p>
+                <input type="radio" name="tick" value="2KG Meat"><b>2KG Meat</b>
+                <p class="fw-bold text-success"><a>$20</a></p>
+            <div>
+                <label class="text-secondary">Quantity</label>
+                <select>
+                     <option hidden selected></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-outline-success"><a href="https://www.amazon.in/b/?_encoding=UTF8&ie=UTF8&node=21761261031&pf_rd_r=31H7VG6KB27RT6H2M8H1&pf_rd_p=feda6df8-22dc-4e0f-b054-2886a5a70651&pd_rd_r=4ae8f598-019b-43ed-9bdf-893ba8ef5687&pd_rd_w=8NMlj&pd_rd_wg=I1ekc&ref_=pd_gw_unk" target="_blank">BUY</a></button>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </form>
+</div>
+    
+</body>
+</html>
